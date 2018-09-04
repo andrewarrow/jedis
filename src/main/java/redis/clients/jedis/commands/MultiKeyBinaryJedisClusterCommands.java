@@ -61,7 +61,7 @@ public interface MultiKeyBinaryJedisClusterCommands {
 
   byte[] brpoplpush(byte[] source, byte[] destination, int timeout);
 
-  Long publish(byte[] channel, byte[] message);
+  Long publish(byte[] channel, byte[] message, byte[] broadcast);
 
   void subscribe(BinaryJedisPubSub jedisPubSub, byte[]... channels);
 

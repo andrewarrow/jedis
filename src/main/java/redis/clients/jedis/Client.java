@@ -753,8 +753,8 @@ public class Client extends BinaryClient implements Commands {
     getrange(SafeEncoder.encode(key), startOffset, endOffset);
   }
 
-  public void publish(final String channel, final String message) {
-    publish(SafeEncoder.encode(channel), SafeEncoder.encode(message));
+  public void publish(final String channel, final String message, final String broadcast) {
+    publish(SafeEncoder.encode(channel), SafeEncoder.encode(message), broadcast);
   }
 
   public void unsubscribe(final String... channels) {

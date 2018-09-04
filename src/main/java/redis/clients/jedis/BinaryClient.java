@@ -589,8 +589,8 @@ public class BinaryClient extends Connection {
     sendCommand(SUBSCRIBE, channels);
   }
 
-  public void publish(final byte[] channel, final byte[] message) {
-    sendCommand(PUBLISH, channel, message);
+  public void publish(final byte[] channel, final byte[] message, final byte[] broadcast) {
+    sendCommand(PUBLISH, channel, message, broadcast);
   }
 
   public void unsubscribe() {

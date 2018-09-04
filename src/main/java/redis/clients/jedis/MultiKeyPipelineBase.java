@@ -410,14 +410,14 @@ public abstract class MultiKeyPipelineBase extends PipelineBase implements
   }
 
   @Override
-  public Response<Long> publish(String channel, String message) {
-    client.publish(channel, message);
+  public Response<Long> publish(String channel, String message, String broadcast) {
+    client.publish(channel, message, broadcast);
     return getResponse(BuilderFactory.LONG);
   }
 
   @Override
-  public Response<Long> publish(byte[] channel, byte[] message) {
-    client.publish(channel, message);
+  public Response<Long> publish(byte[] channel, byte[] message, byte[] broadcast) {
+    client.publish(channel, message, broadcast);
     return getResponse(BuilderFactory.LONG);
   }
 

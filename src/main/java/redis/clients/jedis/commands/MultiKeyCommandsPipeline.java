@@ -67,7 +67,7 @@ public interface MultiKeyCommandsPipeline {
 
   Response<String> brpoplpush(String source, String destination, int timeout);
 
-  Response<Long> publish(String channel, String message);
+  Response<Long> publish(String channel, String message, String broadcast);
 
   Response<String> randomKey();
 

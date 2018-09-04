@@ -2783,10 +2783,10 @@ public class Jedis extends BinaryJedis implements JedisCommands, MultiKeyCommand
   }
 
   @Override
-  public Long publish(final String channel, final String message) {
+  public Long publish(final String channel, final String message, final String broadcast) {
     checkIsInMultiOrPipeline();
     connect();
-    client.publish(channel, message);
+    client.publish(channel, message, broadcast);
     return client.getIntegerReply();
   }
 

@@ -3243,9 +3243,9 @@ public class BinaryJedis implements BasicCommands, BinaryJedisCommands, MultiKey
   }
 
   @Override
-  public Long publish(final byte[] channel, final byte[] message) {
+  public Long publish(final byte[] channel, final byte[] message, final byte[] broadcast) {
     checkIsInMultiOrPipeline();
-    client.publish(channel, message);
+    client.publish(channel, message, broadcast);
     return client.getIntegerReply();
   }
 

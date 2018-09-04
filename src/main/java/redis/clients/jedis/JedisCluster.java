@@ -1676,11 +1676,11 @@ public class JedisCluster extends BinaryJedisCluster implements JedisClusterComm
   }
 
   @Override
-  public Long publish(final String channel, final String message) {
+  public Long publish(final String channel, final String message, final String broadcast) {
     return new JedisClusterCommand<Long>(connectionHandler, maxAttempts) {
       @Override
       public Long execute(Jedis connection) {
-        return connection.publish(channel, message);
+        return connection.publish(channel, message, broadcast);
       }
     }.runWithAnyNode();
   }

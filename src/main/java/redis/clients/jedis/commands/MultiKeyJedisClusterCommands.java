@@ -61,7 +61,7 @@ public interface MultiKeyJedisClusterCommands {
 
   String brpoplpush(String source, String destination, int timeout);
 
-  Long publish(String channel, String message);
+  Long publish(String channel, String message, String broadcast);
 
   void subscribe(JedisPubSub jedisPubSub, String... channels);
 
