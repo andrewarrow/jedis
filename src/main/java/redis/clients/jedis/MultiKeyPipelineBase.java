@@ -395,6 +395,11 @@ public abstract class MultiKeyPipelineBase extends PipelineBase implements Basic
   }
 
   @Override
+  public Response<Long> publishNoBroadcast(String channel, String message) {
+    client.publishNoBroadcast(channel, message);
+    return getResponse(BuilderFactory.LONG);
+  }
+  @Override
   public Response<Long> publish(String channel, String message) {
     client.publish(channel, message);
     return getResponse(BuilderFactory.LONG);
@@ -403,6 +408,11 @@ public abstract class MultiKeyPipelineBase extends PipelineBase implements Basic
   @Override
   public Response<Long> publish(byte[] channel, byte[] message) {
     client.publish(channel, message);
+    return getResponse(BuilderFactory.LONG);
+  }
+  @Override
+  public Response<Long> publishNoBroadcast(byte[] channel, byte[] message) {
+    client.publishNoBroadcast(channel, message);
     return getResponse(BuilderFactory.LONG);
   }
 

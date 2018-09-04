@@ -1594,6 +1594,15 @@ public class BinaryJedisCluster implements BasicCommands, BinaryJedisClusterComm
   }
 
   @Override
+  public Long publishNoBroadcast(final byte[] channel, final byte[] message) {
+    return new JedisClusterCommand<Long>(connectionHandler, maxAttempts) {
+      @Override
+      public Long execute(Jedis connection) {
+        return connection.publishNoBroadcast(channel, message);
+      }
+    }.runWithAnyNode();
+  }
+  @Override
   public Long publish(final byte[] channel, final byte[] message) {
     return new JedisClusterCommand<Long>(connectionHandler, maxAttempts) {
       @Override

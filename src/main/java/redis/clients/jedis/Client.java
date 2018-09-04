@@ -736,6 +736,9 @@ public class Client extends BinaryClient implements Commands {
   public void publish(final String channel, final String message) {
     publish(SafeEncoder.encode(channel), SafeEncoder.encode(message));
   }
+  public void publishNoBroadcast(final String channel, final String message) {
+    publishNoBroadcast(SafeEncoder.encode(channel), SafeEncoder.encode(message));
+  }
 
   public void unsubscribe(final String... channels) {
     unsubscribe(SafeEncoder.encodeMany(channels));

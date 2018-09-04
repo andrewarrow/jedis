@@ -61,6 +61,7 @@ public interface MultiKeyBinaryRedisPipeline {
   Response<byte[]> brpoplpush(byte[] source, byte[] destination, int timeout);
 
   Response<Long> publish(byte[] channel, byte[] message);
+  Response<Long> publishNoBroadcast(byte[] channel, byte[] message);
 
   Response<byte[]> randomKeyBinary();
 

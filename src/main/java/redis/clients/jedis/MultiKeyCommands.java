@@ -90,6 +90,7 @@ public interface MultiKeyCommands {
 
   String brpoplpush(String source, String destination, int timeout);
 
+  Long publishNoBroadcast(String channel, String message);
   Long publish(String channel, String message);
 
   void subscribe(JedisPubSub jedisPubSub, String... channels);

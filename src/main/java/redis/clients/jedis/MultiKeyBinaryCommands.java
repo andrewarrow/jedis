@@ -63,6 +63,7 @@ public interface MultiKeyBinaryCommands {
   byte[] brpoplpush(byte[] source, byte[] destination, int timeout);
 
   Long publish(byte[] channel, byte[] message);
+  Long publishNoBroadcast(byte[] channel, byte[] message);
 
   void subscribe(BinaryJedisPubSub jedisPubSub, byte[]... channels);
 
