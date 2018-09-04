@@ -3250,6 +3250,13 @@ public class BinaryJedis implements BasicCommands, BinaryJedisCommands, MultiKey
   }
 
   @Override
+  public Long publishNoBroadcast(final byte[] channel, final byte[] message) {
+    checkIsInMultiOrPipeline();
+    client.publishNoBroadcast(channel, message);
+    return client.getIntegerReply();
+  }
+
+  @Override
   public void subscribe(BinaryJedisPubSub jedisPubSub, final byte[]... channels) {
     client.setTimeoutInfinite();
     try {
